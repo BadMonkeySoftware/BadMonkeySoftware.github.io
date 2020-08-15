@@ -36,6 +36,7 @@ jQuery(document).ready(function () {
         form.reset();
         form.style = "display: none";
         status_success.style = "display: block";
+        status_success.innerHTML = "Message was sent!";
         status_error.style = "display: none";
         button.style = "display: none ";
     //    status_error.innerHTML = "Thanks!";
