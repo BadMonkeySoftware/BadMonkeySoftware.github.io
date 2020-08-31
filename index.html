@@ -75,6 +75,7 @@
         sizes="192x192" />
     <link rel="apple-touch-icon-precomposed" href="assets/images/cropped-monkey_head_logo.png?fit=180%2C180" />
     <meta name="msapplication-TileImage" content="assets/images/cropped-monkey_head_logo.png?fit=270%2C270" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
 
@@ -207,6 +208,8 @@
                                                         <label for="name"> Message:</label>
                                                         <textarea class="form-control" type="textarea" name="message" id="message" placeholder="Your Message Here" maxlength="6000" rows="7"></textarea>
                                                     </div>
+                                                    <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+
                                                     <button type="submit" class="btn btn-lg btn-filled" id="btnContactUs">Submit >></button>
                                                 </form>
                                                 <div id="success_message" style="width:100%; height:100%; display:none; "> <h3>Sent your message successfully!</h3> </div>
