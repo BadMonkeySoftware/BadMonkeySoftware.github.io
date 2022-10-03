@@ -1,26 +1,54 @@
+const slidesContainer = document.getElementById("slides-container");
+const slides = document.querySelectorAll(".slide");
+const prevButton = document.getElementById("slide-arrow-prev");
+const nextButton = document.getElementById("slide-arrow-next");
+let counter = 0 ;
+const size = slides[0].clientWidth; 
+console.log({slidesContainer, slide: slides, prevButton, nextButton})
+// slidesContainer.style.transform = 'translateX(' + (-size * counter ) + 'px';  
+nextButton.addEventListener("click", () => {
+  console.log("Next")
+  // const slideWidth = slides.clientWidth;
+  console.log({size})
+  // slidesContainer.scrollLeft += slideWidth; 
+   if (counter>=slides.length-1)return;
+  slidesContainer.style.transition = 'transform 0.4s ease-in-out';  
+  counter++;  
+  slidesContainer.style.transform = 'translateX(' + (-size * counter ) + 'px';  
+
+});
+
+prevButton.addEventListener("click", () => {
+  if (counter<=0)return;  
+  slidesContainer.style.transition = 'transform 0.4s ease-in-out';  
+  counter--;  
+  slidesContainer.style.transform = 'translateX(' + (-size * counter ) + 'px';  
+
+});
+
 jQuery(document).ready(function () {
-    var mySwiper = new Swiper('.swiper-container', {
-        // Optional parameters
-        direction: 'horizontal',
-        loop: true,
+    // var mySwiper = new Swiper('.swiper-container', {
+    //     // Optional parameters
+    //     // direction: 'horizontal',
+    //     loop: true,
 
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-            dynamicBullets: true
-        },
+    //     // If we need pagination
+    //     pagination: {
+    //         el: '.swiper-pagination',
+    //         dynamicBullets: true
+    //     },
 
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
+    //     // Navigation arrows
+    //     navigation: {
+    //         nextEl: '.swiper-button-next',
+    //         prevEl: '.swiper-button-prev',
+    //     },
 
-        // And if we need scrollbar
-        scrollbar: {
-            el: '.swiper-scrollbar',
-        },
-    });
+    //     // And if we need scrollbar
+    //     scrollbar: {
+    //         el: '.swiper-scrollbar',
+    //     },
+    // });
 
      // get the form elements defined in your form HTML above
     
